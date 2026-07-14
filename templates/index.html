@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ rutina.titulo }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">Primera rutina</span>
+      <h1>{{ rutina.titulo }}</h1>
+      <p class="subtitulo">{{ rutina.subtitulo }}</p>
+      <p class="cliente">Preparada para: <strong>{{ cliente }}</strong></p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="franja">
+      <div class="franja-icono">🔥</div>
+      <div>
+        <h2>{{ rutina.calentamiento.nombre }} · {{ rutina.calentamiento.duracion }}</h2>
+        <p>{{ rutina.calentamiento.detalle }}</p>
+      </div>
+    </section>
+
+    {% for bloque in rutina.bloques %}
+    <section class="bloque">
+      <h2 class="bloque-titulo">{{ bloque.nombre }}</h2>
+      <div class="grid">
+        {% for ej in bloque.ejercicios %}
+        <article class="card">
+          <div class="card-media">
+            <img
+              src="{{ ej.img1 }}"
+              data-img1="{{ ej.img1 }}"
+              data-img2="{{ ej.img2 }}"
+              alt="Demostración de {{ ej.nombre }}"
+              class="ejercicio-gif"
+              loading="lazy"
+            >
+          </div>
+          <div class="card-body">
+            <h3>{{ ej.nombre }}</h3>
+            <p class="series">{{ ej.series }}</p>
+            <p class="descanso">{{ ej.descanso }}</p>
+            <p class="instrucciones">{{ ej.instrucciones }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+
+    <section class="franja">
+      <div class="franja-icono">🧘</div>
+      <div>
+        <h2>{{ rutina.enfriamiento.nombre }} · {{ rutina.enfriamiento.duracion }}</h2>
+        <p>{{ rutina.enfriamiento.detalle }}</p>
+      </div>
+    </section>
+
+    <section class="notas">
+      <h2>Recomendaciones</h2>
+      <ul>
+        {% for nota in rutina.notas %}
+        <li>{{ nota }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Rutina personalizada · Consultá siempre a tu entrenador/a ante cualquier duda.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
