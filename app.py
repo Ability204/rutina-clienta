@@ -26,6 +26,10 @@ FOTO_CURL = {
     "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Woman_in_a_gym_sitting_on_the_floor_and_doing_dumbbell_curls.jpg",
     "credito": '"Woman in a gym sitting on the floor and doing dumbbell curls" por Shixart1985, CC BY 2.0',
 }
+FOTO_HOMBRO = {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Strong_woman_performs_shoulder_press_exercise_in_fitness_gym_during_afternoon_workout_session.jpg",
+    "credito": '"Strong woman performs shoulder press exercise in fitness gym..." por Shixart1985, CC BY 2.0',
+}
 
 DIA_1 = {
     "slug": "index",
@@ -130,7 +134,7 @@ DIA_1 = {
 DIA_2 = {
     "slug": "dia2",
     "dia": "Día 2",
-    "titulo": "Rutina de Espalda y Brazos",
+    "titulo": "Rutina de Espalda, Bíceps y Hombros",
     "subtitulo": "Nivel principiante · Segunda sesión",
     "calentamiento": {
         "nombre": "Calentamiento",
@@ -139,7 +143,7 @@ DIA_2 = {
     },
     "bloques": [
         {
-            "nombre": "Espalda y brazos (con mancuernas livianas)",
+            "nombre": "Espalda",
             "ejercicios": [
                 {
                     "nombre": "Remo con mancuerna a una mano",
@@ -149,6 +153,11 @@ DIA_2 = {
                     "carpeta": "One-Arm_Dumbbell_Row",
                     "foto": FOTO_REMO,
                 },
+            ],
+        },
+        {
+            "nombre": "Bíceps",
+            "ejercicios": [
                 {
                     "nombre": "Curl de bíceps con mancuernas",
                     "series": "2 series x 12 repeticiones",
@@ -157,19 +166,18 @@ DIA_2 = {
                     "carpeta": "Dumbbell_Bicep_Curl",
                     "foto": FOTO_CURL,
                 },
+            ],
+        },
+        {
+            "nombre": "Hombros",
+            "ejercicios": [
                 {
-                    "nombre": "Extensión de tríceps de pie",
-                    "series": "2 series x 12 repeticiones",
-                    "descanso": "45 seg. de descanso entre series",
-                    "instrucciones": "De pie, sostén una mancuerna con ambas manos por encima de la cabeza con los brazos extendidos. Baja la mancuerna doblando los codos detrás de la cabeza, manteniendo los codos quietos, y vuelve a extender los brazos.",
-                    "carpeta": "Standing_Dumbbell_Triceps_Extension",
-                },
-                {
-                    "nombre": "Elevación lateral de hombros",
-                    "series": "2 series x 12 repeticiones",
-                    "descanso": "45 seg. de descanso entre series",
-                    "instrucciones": "De pie, con una mancuerna en cada mano a los costados del cuerpo, levanta los brazos hacia los lados hasta la altura del hombro, con un ligero doblez en el codo. Baja despacio y repite.",
-                    "carpeta": "Side_Lateral_Raise",
+                    "nombre": "Press de hombro con mancuernas de pie",
+                    "series": "2 series x 10 repeticiones",
+                    "descanso": "60 seg. de descanso entre series",
+                    "instrucciones": "De pie con los pies al ancho de los hombros, sostén una mancuerna en cada mano a la altura de la cabeza, con los codos hacia afuera. Empuja las mancuernas hacia arriba hasta extender los brazos por completo, y baja despacio a la posición inicial.",
+                    "carpeta": "Standing_Dumbbell_Press",
+                    "foto": FOTO_HOMBRO,
                 },
             ],
         },
