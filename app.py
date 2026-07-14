@@ -113,7 +113,12 @@ def con_imagenes(rutina):
 
 @app.route("/")
 def index():
-    return render_template("index.html", rutina=con_imagenes(RUTINA), cliente="Nombre de la clienta")
+    return render_template(
+        "index.html",
+        rutina=con_imagenes(RUTINA),
+        cliente="Sofía Gómez",
+        frase="Cada repetición de hoy es un paso hacia la versión más fuerte de ti misma.",
+    )
 
 
 if __name__ == "__main__":
