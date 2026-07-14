@@ -4,7 +4,12 @@ app = Flask(__name__)
 
 IMG_BASE = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises"
 
-RUTINA = {
+CLIENTE = "Sofía Gómez"
+FRASE = "Cada repetición de hoy es un paso hacia la versión más fuerte de ti misma."
+
+DIA_1 = {
+    "slug": "index",
+    "dia": "Día 1",
     "titulo": "Rutina Inicial de Piernas y Cardio",
     "subtitulo": "Nivel principiante · Primera semana",
     "calentamiento": {
@@ -15,7 +20,6 @@ RUTINA = {
     "bloques": [
         {
             "nombre": "Piernas (suave)",
-            "icono": "leg",
             "ejercicios": [
                 {
                     "nombre": "Sentadilla sin peso",
@@ -49,7 +53,6 @@ RUTINA = {
         },
         {
             "nombre": "Iniciación con mancuernas",
-            "icono": "dumbbell",
             "ejercicios": [
                 {
                     "nombre": "Sentadilla con mancuernas",
@@ -69,7 +72,6 @@ RUTINA = {
         },
         {
             "nombre": "Cardio (bajo impacto)",
-            "icono": "cardio",
             "ejercicios": [
                 {
                     "nombre": "Jumping jack suave",
@@ -101,6 +103,66 @@ RUTINA = {
     ],
 }
 
+DIA_2 = {
+    "slug": "dia2",
+    "dia": "Día 2",
+    "titulo": "Rutina de Espalda y Brazos",
+    "subtitulo": "Nivel principiante · Segunda sesión",
+    "calentamiento": {
+        "nombre": "Calentamiento",
+        "duracion": "5 minutos",
+        "detalle": "Círculos de brazos y hombros, y unos minutos de marcha suave en el lugar antes de empezar.",
+    },
+    "bloques": [
+        {
+            "nombre": "Espalda y brazos (con mancuernas livianas)",
+            "ejercicios": [
+                {
+                    "nombre": "Remo con mancuerna a una mano",
+                    "series": "2 series x 10 repeticiones por lado",
+                    "descanso": "60 seg. de descanso entre series",
+                    "instrucciones": "Apoya la rodilla y la mano de un lado sobre un banco o silla firme, con la espalda recta. Con la otra mano, sostén la mancuerna y tira hacia arriba llevando el codo hacia atrás, cerca del cuerpo. Baja controlando el movimiento y repite.",
+                    "carpeta": "One-Arm_Dumbbell_Row",
+                },
+                {
+                    "nombre": "Curl de bíceps con mancuernas",
+                    "series": "2 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie, con una mancuerna en cada mano y los codos pegados al cuerpo, sube las mancuernas doblando los codos hasta la altura del hombro. Baja despacio sin mover los codos y repite.",
+                    "carpeta": "Dumbbell_Bicep_Curl",
+                },
+                {
+                    "nombre": "Extensión de tríceps de pie",
+                    "series": "2 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie, sostén una mancuerna con ambas manos por encima de la cabeza con los brazos extendidos. Baja la mancuerna doblando los codos detrás de la cabeza, manteniendo los codos quietos, y vuelve a extender los brazos.",
+                    "carpeta": "Standing_Dumbbell_Triceps_Extension",
+                },
+                {
+                    "nombre": "Elevación lateral de hombros",
+                    "series": "2 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie, con una mancuerna en cada mano a los costados del cuerpo, levanta los brazos hacia los lados hasta la altura del hombro, con un ligero doblez en el codo. Baja despacio y repite.",
+                    "carpeta": "Side_Lateral_Raise",
+                },
+            ],
+        },
+    ],
+    "enfriamiento": {
+        "nombre": "Enfriamiento y estiramiento",
+        "duracion": "5 minutos",
+        "detalle": "Estira brazos, hombros y espalda alta al terminar, sosteniendo cada estiramiento unos 20 segundos.",
+    },
+    "notas": [
+        "Toma agua antes, durante y después de la rutina.",
+        "Si sientes dolor articular (no solo cansancio muscular), detente y avísale a tu entrenador/a.",
+        "Usa el mismo peso liviano de la primera sesión o uno apenas mayor: hoy seguimos priorizando la técnica.",
+        "Las piernas descansan hoy: es normal y necesario para que el músculo se recupere.",
+    ],
+}
+
+DIAS = [DIA_1, DIA_2]
+
 
 def con_imagenes(rutina):
     for bloque in rutina["bloques"]:
@@ -111,14 +173,27 @@ def con_imagenes(rutina):
     return rutina
 
 
-@app.route("/")
-def index():
+def render_dia(dia):
+    nav = [{"dia": d["dia"], "titulo": d["titulo"], "slug": d["slug"], "activo": d["slug"] == dia["slug"]} for d in DIAS]
     return render_template(
         "index.html",
-        rutina=con_imagenes(RUTINA),
-        cliente="Sofía Gómez",
-        frase="Cada repetición de hoy es un paso hacia la versión más fuerte de ti misma.",
+        rutina=con_imagenes(dia),
+        cliente=CLIENTE,
+        frase=FRASE,
+        nav=nav,
     )
+
+
+@app.route("/")
+@app.route("/index.html")
+def index():
+    return render_dia(DIA_1)
+
+
+@app.route("/dia2")
+@app.route("/dia2.html")
+def dia2():
+    return render_dia(DIA_2)
 
 
 if __name__ == "__main__":
