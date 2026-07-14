@@ -22,6 +22,10 @@ FOTO_REMO = {
     "url": "https://live.staticflickr.com/65535/54555670278_61710d2879_b.jpg",
     "credito": '"A dedicated woman with long blonde hair performs a bent-over dumbbell row..." por nenadstojkovicart, CC BY 2.0',
 }
+FOTO_CURL = {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Woman_in_a_gym_sitting_on_the_floor_and_doing_dumbbell_curls.jpg",
+    "credito": '"Woman in a gym sitting on the floor and doing dumbbell curls" por Shixart1985, CC BY 2.0',
+}
 
 DIA_1 = {
     "slug": "index",
@@ -151,6 +155,7 @@ DIA_2 = {
                     "descanso": "45 seg. de descanso entre series",
                     "instrucciones": "De pie, con una mancuerna en cada mano y los codos pegados al cuerpo, sube las mancuernas doblando los codos hasta la altura del hombro. Baja despacio sin mover los codos y repite.",
                     "carpeta": "Dumbbell_Bicep_Curl",
+                    "foto": FOTO_CURL,
                 },
                 {
                     "nombre": "Extensión de tríceps de pie",
