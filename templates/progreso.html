@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Progreso · Fotos del gym</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">Seguimiento</span>
+      <h1>Mi Progreso</h1>
+      <p class="subtitulo">Guardá una foto de cada check-in para comparar tu avance</p>
+      <p class="cliente">Preparada para: <strong>{{ cliente }}</strong></p>
+    </div>
+  </header>
+
+  <nav class="dias-nav">
+    {% for item in nav %}
+    <a href="{{ item.slug }}.html" class="dia-tab {{ 'activo' if item.activo else '' }}">{{ (item.dia + ' · ') if item.dia else '' }}{{ item.titulo }}</a>
+    {% endfor %}
+  </nav>
+
+  <main class="container">
+
+    <section class="franja">
+      <div class="franja-icono">📸</div>
+      <div>
+        <h2>Subí la foto de hoy</h2>
+        <p>Las fotos se guardan solo en este navegador/dispositivo, nadie más las puede ver. Sacala siempre con la misma ropa, luz y ángulo para comparar mejor.</p>
+      </div>
+    </section>
+
+    <section class="notas subir-foto">
+      <h2>Nueva foto</h2>
+      <form id="form-foto">
+        <label for="fecha-foto">Fecha</label>
+        <input type="date" id="fecha-foto" required>
+
+        <label for="nota-foto">Nota (opcional)</label>
+        <input type="text" id="nota-foto" placeholder="Ej: después del día 2, peso 68kg">
+
+        <label for="input-foto">Foto</label>
+        <input type="file" id="input-foto" accept="image/*" capture="environment" required>
+
+        <button type="submit" class="btn-guardar">Guardar foto</button>
+      </form>
+      <p id="mensaje-guardado" class="mensaje-guardado"></p>
+    </section>
+
+    <section class="bloque">
+      <h2 class="bloque-titulo">Tus fotos guardadas</h2>
+      <div id="galeria-vacia" class="galeria-vacia">Todavía no guardaste ninguna foto. Subí la primera arriba.</div>
+      <div id="galeria" class="galeria-fechas"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Rutina personalizada · Consulta siempre a tu entrenador/a ante cualquier duda.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/progreso.js') }}"></script>
+</body>
+</html>

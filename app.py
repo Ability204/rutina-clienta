@@ -194,6 +194,12 @@ DIA_2 = {
 
 DIAS = [DIA_1, DIA_2]
 
+PAGINAS_NAV = [
+    {"slug": "index", "dia": "Día 1", "titulo": "Rutina Inicial de Piernas y Cardio"},
+    {"slug": "dia2", "dia": "Día 2", "titulo": "Rutina de Espalda, Bíceps y Hombros"},
+    {"slug": "progreso", "dia": "", "titulo": "Mi Progreso (fotos)"},
+]
+
 
 def con_imagenes(rutina):
     for bloque in rutina["bloques"]:
@@ -204,14 +210,17 @@ def con_imagenes(rutina):
     return rutina
 
 
+def nav_para(slug_activo):
+    return [{**p, "activo": p["slug"] == slug_activo} for p in PAGINAS_NAV]
+
+
 def render_dia(dia):
-    nav = [{"dia": d["dia"], "titulo": d["titulo"], "slug": d["slug"], "activo": d["slug"] == dia["slug"]} for d in DIAS]
     return render_template(
         "index.html",
         rutina=con_imagenes(dia),
         cliente=CLIENTE,
         frase=FRASE,
-        nav=nav,
+        nav=nav_para(dia["slug"]),
     )
 
 
@@ -225,6 +234,16 @@ def index():
 @app.route("/dia2.html")
 def dia2():
     return render_dia(DIA_2)
+
+
+@app.route("/progreso")
+@app.route("/progreso.html")
+def progreso():
+    return render_template(
+        "progreso.html",
+        cliente=CLIENTE,
+        nav=nav_para("progreso"),
+    )
 
 
 if __name__ == "__main__":

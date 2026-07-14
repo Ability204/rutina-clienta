@@ -20,7 +20,7 @@
 
   <nav class="dias-nav">
     {% for item in nav %}
-    <a href="{{ item.slug }}.html" class="dia-tab {{ 'activo' if item.activo else '' }}">{{ item.dia }} · {{ item.titulo }}</a>
+    <a href="{{ item.slug }}.html" class="dia-tab {{ 'activo' if item.activo else '' }}">{{ (item.dia + ' · ') if item.dia else '' }}{{ item.titulo }}</a>
     {% endfor %}
   </nav>
 
