@@ -7,30 +7,6 @@ IMG_BASE = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exer
 CLIENTE = "Sofía Gómez"
 FRASE = "Cada repetición de hoy es un paso hacia la versión más fuerte de ti misma."
 
-# Fotos de mujer con licencia CC BY 2.0 (Flickr, via Openverse), usadas donde encontramos
-# una demostracion clara y profesional del ejercicio. El resto sigue con la base de
-# demostraciones animadas (free-exercise-db), que solo tiene modelo masculino.
-FOTO_SENTADILLA = {
-    "url": "https://live.staticflickr.com/65535/54567905274_2831058e4c_b.jpg",
-    "credito": '"A woman engages in a challenging workout, performing weighted squats..." por nenad53, CC BY 2.0',
-}
-FOTO_ZANCADA = {
-    "url": "https://live.staticflickr.com/65535/54555431111_5064172ff0_b.jpg",
-    "credito": '"Young woman performs weighted lunges in modern gym..." por nenadstojkovicart, CC BY 2.0',
-}
-FOTO_REMO = {
-    "url": "https://live.staticflickr.com/65535/54555670278_61710d2879_b.jpg",
-    "credito": '"A dedicated woman with long blonde hair performs a bent-over dumbbell row..." por nenadstojkovicart, CC BY 2.0',
-}
-FOTO_CURL = {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Woman_in_a_gym_sitting_on_the_floor_and_doing_dumbbell_curls.jpg",
-    "credito": '"Woman in a gym sitting on the floor and doing dumbbell curls" por Shixart1985, CC BY 2.0',
-}
-FOTO_HOMBRO = {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Strong_woman_performs_shoulder_press_exercise_in_fitness_gym_during_afternoon_workout_session.jpg",
-    "credito": '"Strong woman performs shoulder press exercise in fitness gym..." por Shixart1985, CC BY 2.0',
-}
-
 DIA_1 = {
     "slug": "index",
     "dia": "Día 1",
@@ -51,7 +27,6 @@ DIA_1 = {
                     "descanso": "45 seg. de descanso entre series",
                     "instrucciones": "Párate con los pies al ancho de los hombros. Baja flexionando las rodillas y la cadera como si te fueras a sentar, con el pecho arriba. Baja solo hasta donde te sientas cómoda y vuelve a subir.",
                     "carpeta": "Bodyweight_Squat",
-                    "foto": FOTO_SENTADILLA,
                 },
                 {
                     "nombre": "Zancada caminando",
@@ -59,7 +34,6 @@ DIA_1 = {
                     "descanso": "45 seg. de descanso entre series",
                     "instrucciones": "Párate con los pies al ancho de la cadera. Da un paso largo hacia adelante y baja hasta que la rodilla trasera casi toque el piso. Vuelve a subir y sigue caminando alternando de pierna.",
                     "carpeta": "Bodyweight_Walking_Lunge",
-                    "foto": FOTO_ZANCADA,
                 },
                 {
                     "nombre": "Puente de glúteo",
@@ -86,7 +60,6 @@ DIA_1 = {
                     "descanso": "60 seg. de descanso entre series",
                     "instrucciones": "Es la misma sentadilla de antes, pero ahora sostén una mancuerna liviana en cada mano, a los costados del cuerpo. Usa muy poco peso: el objetivo de hoy es familiarizarte con el movimiento usando mancuernas, no cargar peso.",
                     "carpeta": "Dumbbell_Squat",
-                    "foto": FOTO_SENTADILLA,
                 },
                 {
                     "nombre": "Zancada con mancuernas",
@@ -94,7 +67,13 @@ DIA_1 = {
                     "descanso": "60 seg. de descanso entre series",
                     "instrucciones": "De pie con el torso derecho, sostén una mancuerna liviana en cada mano a los costados. Da un paso adelante y baja como en la zancada sin peso, manteniendo el equilibrio. Vuelve al centro y repite alternando de pierna.",
                     "carpeta": "Dumbbell_Lunges",
-                    "foto": FOTO_ZANCADA,
+                },
+                {
+                    "nombre": "Sentadilla sumo con mancuerna",
+                    "series": "2 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "Sostén una mancuerna liviana con ambas manos frente a ti. Párate con los pies bien separados, más anchos que los hombros, y las puntas hacia afuera. Baja flexionando las rodillas siguiendo la línea de los pies, con el pecho arriba, y vuelve a subir empujando con los talones.",
+                    "carpeta": "Plie_Dumbbell_Squat",
                 },
             ],
         },
@@ -151,7 +130,13 @@ DIA_2 = {
                     "descanso": "60 seg. de descanso entre series",
                     "instrucciones": "Apoya la rodilla y la mano de un lado sobre un banco o silla firme, con la espalda recta. Con la otra mano, sostén la mancuerna y tira hacia arriba llevando el codo hacia atrás, cerca del cuerpo. Baja controlando el movimiento y repite.",
                     "carpeta": "One-Arm_Dumbbell_Row",
-                    "foto": FOTO_REMO,
+                },
+                {
+                    "nombre": "Remo con mancuernas a dos manos",
+                    "series": "2 series x 10 repeticiones",
+                    "descanso": "60 seg. de descanso entre series",
+                    "instrucciones": "De pie, flexiona un poco las rodillas e inclina el torso hacia adelante manteniendo la espalda recta, con una mancuerna en cada mano colgando frente a ti. Tira de las dos mancuernas hacia arriba llevando los codos hacia atrás, y baja controlando el movimiento.",
+                    "carpeta": "Bent_Over_Two-Dumbbell_Row",
                 },
             ],
         },
@@ -164,7 +149,13 @@ DIA_2 = {
                     "descanso": "45 seg. de descanso entre series",
                     "instrucciones": "De pie, con una mancuerna en cada mano y los codos pegados al cuerpo, sube las mancuernas doblando los codos hasta la altura del hombro. Baja despacio sin mover los codos y repite.",
                     "carpeta": "Dumbbell_Bicep_Curl",
-                    "foto": FOTO_CURL,
+                },
+                {
+                    "nombre": "Curl martillo alternado",
+                    "series": "2 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie, con una mancuerna en cada mano sostenida como si fuera un martillo (palmas mirándose entre sí), sube una mancuerna doblando el codo sin girar la muñeca. Baja y repite alternando de brazo.",
+                    "carpeta": "Alternate_Hammer_Curl",
                 },
             ],
         },
@@ -177,7 +168,13 @@ DIA_2 = {
                     "descanso": "60 seg. de descanso entre series",
                     "instrucciones": "De pie con los pies al ancho de los hombros, sostén una mancuerna en cada mano a la altura de la cabeza, con los codos hacia afuera. Empuja las mancuernas hacia arriba hasta extender los brazos por completo, y baja despacio a la posición inicial.",
                     "carpeta": "Standing_Dumbbell_Press",
-                    "foto": FOTO_HOMBRO,
+                },
+                {
+                    "nombre": "Elevación lateral de hombros",
+                    "series": "2 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie, con una mancuerna en cada mano a los costados del cuerpo, levanta los brazos hacia los lados hasta la altura del hombro, con un ligero doblez en el codo. Baja despacio y repite.",
+                    "carpeta": "Side_Lateral_Raise",
                 },
             ],
         },
@@ -199,20 +196,11 @@ DIAS = [DIA_1, DIA_2]
 
 
 def con_imagenes(rutina):
-    creditos = []
     for bloque in rutina["bloques"]:
         for ej in bloque["ejercicios"]:
-            foto = ej.get("foto")
-            if foto:
-                ej["img1"] = foto["url"]
-                ej["img2"] = foto["url"]
-                if foto["credito"] not in creditos:
-                    creditos.append(foto["credito"])
-            else:
-                carpeta = ej["carpeta"]
-                ej["img1"] = f"{IMG_BASE}/{carpeta}/0.jpg"
-                ej["img2"] = f"{IMG_BASE}/{carpeta}/1.jpg"
-    rutina["creditos"] = creditos
+            carpeta = ej["carpeta"]
+            ej["img1"] = f"{IMG_BASE}/{carpeta}/0.jpg"
+            ej["img2"] = f"{IMG_BASE}/{carpeta}/1.jpg"
     return rutina
 
 
