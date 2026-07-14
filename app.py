@@ -62,7 +62,7 @@ DIA_1 = {
                     "series": "3 series x 15 repeticiones",
                     "descanso": "30 seg. de descanso entre series",
                     "instrucciones": "Acuéstate boca arriba con las rodillas flexionadas y los pies apoyados. Empuja con los talones y levanta la cadera apretando los glúteos arriba. Baja despacio y repite.",
-                    "carpeta": "Bent-Knee_Hip_Raise",
+                    "carpeta": "Butt_Lift_Bridge",
                 },
                 {
                     "nombre": "Elevación de talones",
