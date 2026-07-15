@@ -220,6 +220,20 @@ DIA_3 = {
                     "instrucciones": "Acostada boca arriba con una mancuerna en cada mano, brazos extendidos arriba del pecho y un ligero doblez en los codos. Abre los brazos hacia los costados en forma de arco hasta sentir el estiramiento en el pecho, y vuelve a juntarlos arriba.",
                     "carpeta": "Dumbbell_Flyes",
                 },
+                {
+                    "nombre": "Press de pecho en máquina",
+                    "series": "3 series x 10 repeticiones",
+                    "descanso": "60 seg. de descanso entre series",
+                    "instrucciones": "Sentada en la máquina de press de pecho, ajusta el asiento para que las agarraderas queden a la altura del pecho. Empuja hacia adelante extendiendo los brazos, y vuelve despacio a la posición inicial sin soltar el peso de golpe.",
+                    "carpeta": "Leverage_Chest_Press",
+                },
+                {
+                    "nombre": "Aperturas en polea (cruce)",
+                    "series": "3 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie en el centro de la máquina de poleas, con las poleas arriba y una manija en cada mano. Da un paso adelante e inclina el torso levemente. Junta las manos al frente en forma de arco, apretando el pecho, y vuelve despacio a la posición inicial.",
+                    "carpeta": "Cable_Crossover",
+                },
             ],
         },
         {
@@ -239,6 +253,20 @@ DIA_3 = {
                     "instrucciones": "Siéntate en el borde de una silla o banco firme, con las manos apoyadas a los costados de la cadera y las piernas extendidas hacia adelante. Baja el cuerpo doblando los codos hacia atrás, y empuja con los brazos para volver a subir.",
                     "carpeta": "Bench_Dips",
                 },
+                {
+                    "nombre": "Extensión de tríceps en polea (barra)",
+                    "series": "3 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie frente a la polea alta con una barra recta, codos pegados al cuerpo y antebrazos apuntando hacia arriba. Empuja la barra hacia abajo hasta extender los brazos por completo, y vuelve despacio sin mover los codos.",
+                    "carpeta": "Triceps_Pushdown",
+                },
+                {
+                    "nombre": "Extensión de tríceps en polea (cuerda)",
+                    "series": "3 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie frente a la polea alta con la cuerda, codos pegados al cuerpo. Empuja la cuerda hacia abajo separando las manos levemente al final del movimiento, y vuelve despacio a la posición inicial.",
+                    "carpeta": "Triceps_Pushdown_-_Rope_Attachment",
+                },
             ],
         },
         {
@@ -248,7 +276,7 @@ DIA_3 = {
                     "nombre": "Plancha",
                     "series": "3 series x 20 segundos",
                     "descanso": "40 seg. de descanso entre series",
-                    "instrucciones": "Apoyate en el piso sobre los antebrazos y las puntas de los pies, con el cuerpo en línea recta desde la cabeza hasta los talones. Mantén el abdomen contraído y sostén la posición sin dejar caer la cadera.",
+                    "instrucciones": "Apóyate en el piso sobre los antebrazos y las puntas de los pies, con el cuerpo en línea recta desde la cabeza hasta los talones. Mantén el abdomen contraído y sostén la posición sin dejar caer la cadera.",
                     "carpeta": "Plank",
                 },
                 {
