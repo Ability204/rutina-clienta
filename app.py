@@ -260,6 +260,25 @@ DIA_3 = {
                 },
             ],
         },
+        {
+            "nombre": "Cardio en caminadora (20 minutos)",
+            "ejercicios": [
+                {
+                    "nombre": "Caminadora · velocidad media",
+                    "series": "10 minutos continuos",
+                    "descanso": "Sin descanso, ritmo constante",
+                    "instrucciones": "Súbete a la caminadora y camina a paso firme y rápido (velocidad media), sin llegar a trotar. Deberías poder hablar entrecortado pero no sostener una conversación larga.",
+                    "carpeta": "Walking_Treadmill",
+                },
+                {
+                    "nombre": "Caminadora · velocidad baja",
+                    "series": "10 minutos continuos",
+                    "descanso": "Sin descanso, ritmo constante",
+                    "instrucciones": "Baja la velocidad a un paso suave y cómodo, para ir enfriando el cuerpo después del ritmo medio. Deberías poder hablar sin esfuerzo.",
+                    "carpeta": "Walking_Treadmill",
+                },
+            ],
+        },
     ],
     "enfriamiento": {
         "nombre": "Enfriamiento y estiramiento",
@@ -270,7 +289,7 @@ DIA_3 = {
         "Toma agua antes, durante y después de la rutina.",
         "Si sientes dolor articular (no solo cansancio muscular), detente y avísale a tu entrenador/a.",
         "En la plancha, prioriza mantener la cadera alineada por sobre aguantar más tiempo.",
-        "Con esta sesión ya completaste piernas, espalda/brazos y pecho/core: la próxima semana podés repetir el ciclo aumentando un poco el peso o las repeticiones.",
+        "Con esta sesión ya completaste piernas, espalda/brazos y pecho/core: la próxima semana puedes repetir el ciclo aumentando un poco el peso o las repeticiones.",
     ],
 }
 
