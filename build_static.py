@@ -27,4 +27,4 @@ shutil.copyfile(ROOT / "static" / "css" / "style.css", DOCS / "static" / "css" /
 shutil.copyfile(ROOT / "static" / "js" / "script.js", DOCS / "static" / "js" / "script.js")
 shutil.copyfile(ROOT / "static" / "js" / "progreso.js", DOCS / "static" / "js" / "progreso.js")
 
-print("Sitio estatico generado en docs/ (index.html, dia2.html y progreso.html)")
+print("Sitio estatico generado en docs/ (" + ", ".join(f"{d['slug']}.html" for d in DIAS) + " y progreso.html)")

@@ -192,11 +192,94 @@ DIA_2 = {
     ],
 }
 
-DIAS = [DIA_1, DIA_2]
+DIA_3 = {
+    "slug": "dia3",
+    "dia": "Día 3",
+    "titulo": "Rutina de Pecho, Tríceps y Core",
+    "subtitulo": "Nivel principiante · Tercera sesión",
+    "calentamiento": {
+        "nombre": "Calentamiento",
+        "duracion": "5 minutos",
+        "detalle": "Círculos de brazos, un par de flexiones de rodillas en el piso y marcha suave en el lugar antes de empezar.",
+    },
+    "bloques": [
+        {
+            "nombre": "Pecho",
+            "ejercicios": [
+                {
+                    "nombre": "Press de pecho con mancuernas",
+                    "series": "2 series x 10 repeticiones",
+                    "descanso": "60 seg. de descanso entre series",
+                    "instrucciones": "Acostada boca arriba (en el piso o en una banca), con una mancuerna en cada mano a la altura del pecho y los codos hacia afuera. Empuja las mancuernas hacia arriba hasta casi juntarlas, y baja despacio a la posición inicial.",
+                    "carpeta": "Dumbbell_Bench_Press",
+                },
+                {
+                    "nombre": "Aperturas con mancuernas",
+                    "series": "2 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "Acostada boca arriba con una mancuerna en cada mano, brazos extendidos arriba del pecho y un ligero doblez en los codos. Abre los brazos hacia los costados en forma de arco hasta sentir el estiramiento en el pecho, y vuelve a juntarlos arriba.",
+                    "carpeta": "Dumbbell_Flyes",
+                },
+            ],
+        },
+        {
+            "nombre": "Tríceps",
+            "ejercicios": [
+                {
+                    "nombre": "Extensión de tríceps de pie",
+                    "series": "2 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "De pie, sostén una mancuerna con ambas manos por encima de la cabeza con los brazos extendidos. Baja la mancuerna doblando los codos detrás de la cabeza, manteniendo los codos quietos, y vuelve a extender los brazos.",
+                    "carpeta": "Standing_Dumbbell_Triceps_Extension",
+                },
+                {
+                    "nombre": "Fondos de tríceps en banco",
+                    "series": "2 series x 10 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "Siéntate en el borde de una silla o banco firme, con las manos apoyadas a los costados de la cadera y las piernas extendidas hacia adelante. Baja el cuerpo doblando los codos hacia atrás, y empuja con los brazos para volver a subir.",
+                    "carpeta": "Bench_Dips",
+                },
+            ],
+        },
+        {
+            "nombre": "Core",
+            "ejercicios": [
+                {
+                    "nombre": "Plancha",
+                    "series": "3 series x 20 segundos",
+                    "descanso": "40 seg. de descanso entre series",
+                    "instrucciones": "Apoyate en el piso sobre los antebrazos y las puntas de los pies, con el cuerpo en línea recta desde la cabeza hasta los talones. Mantén el abdomen contraído y sostén la posición sin dejar caer la cadera.",
+                    "carpeta": "Plank",
+                },
+                {
+                    "nombre": "Abdominales (crunch)",
+                    "series": "2 series x 15 repeticiones",
+                    "descanso": "30 seg. de descanso entre series",
+                    "instrucciones": "Acostada boca arriba con las rodillas flexionadas y los pies apoyados, manos apenas tocando la cabeza sin entrelazar los dedos. Levanta los hombros del piso contrayendo el abdomen, y baja despacio sin soltar de golpe.",
+                    "carpeta": "Crunches",
+                },
+            ],
+        },
+    ],
+    "enfriamiento": {
+        "nombre": "Enfriamiento y estiramiento",
+        "duracion": "5 minutos",
+        "detalle": "Estira pecho, tríceps y espalda baja al terminar, sosteniendo cada estiramiento unos 20 segundos.",
+    },
+    "notas": [
+        "Toma agua antes, durante y después de la rutina.",
+        "Si sientes dolor articular (no solo cansancio muscular), detente y avísale a tu entrenador/a.",
+        "En la plancha, prioriza mantener la cadera alineada por sobre aguantar más tiempo.",
+        "Con esta sesión ya completaste piernas, espalda/brazos y pecho/core: la próxima semana podés repetir el ciclo aumentando un poco el peso o las repeticiones.",
+    ],
+}
+
+DIAS = [DIA_1, DIA_2, DIA_3]
 
 PAGINAS_NAV = [
     {"slug": "index", "dia": "Día 1", "titulo": "Rutina Inicial de Piernas y Cardio"},
     {"slug": "dia2", "dia": "Día 2", "titulo": "Rutina de Espalda, Bíceps y Hombros"},
+    {"slug": "dia3", "dia": "Día 3", "titulo": "Rutina de Pecho, Tríceps y Core"},
     {"slug": "progreso", "dia": "", "titulo": "Mi Progreso (fotos)"},
 ]
 
@@ -234,6 +317,12 @@ def index():
 @app.route("/dia2.html")
 def dia2():
     return render_dia(DIA_2)
+
+
+@app.route("/dia3")
+@app.route("/dia3.html")
+def dia3():
+    return render_dia(DIA_3)
 
 
 @app.route("/progreso")
