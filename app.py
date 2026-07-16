@@ -321,12 +321,95 @@ DIA_3 = {
     ],
 }
 
-DIAS = [DIA_1, DIA_2, DIA_3]
+DIA_4 = {
+    "slug": "dia4",
+    "dia": "Día 4",
+    "titulo": "Rutina de Femoral, Pantorrillas y Glúteos",
+    "subtitulo": "Nivel principiante · Cuarta sesión",
+    "calentamiento": {
+        "nombre": "Calentamiento",
+        "duracion": "5 minutos",
+        "detalle": "Marcha suave en el lugar, círculos de cadera y estocadas suaves sin peso antes de empezar.",
+    },
+    "bloques": [
+        {
+            "nombre": "Femoral (isquiotibiales)",
+            "ejercicios": [
+                {
+                    "nombre": "Peso muerto rumano con mancuernas",
+                    "series": "3 series x 10 repeticiones",
+                    "descanso": "60 seg. de descanso entre series",
+                    "instrucciones": "De pie, sostén una mancuerna en cada mano frente a los muslos, con las rodillas ligeramente flexionadas. Baja las mancuernas deslizándolas por delante de las piernas, empujando la cadera hacia atrás y manteniendo la espalda recta, hasta sentir el estiramiento en la parte de atrás del muslo. Vuelve a subir apretando los glúteos.",
+                    "carpeta": "Stiff-Legged_Dumbbell_Deadlift",
+                },
+                {
+                    "nombre": "Curl femoral en máquina",
+                    "series": "3 series x 12 repeticiones",
+                    "descanso": "45 seg. de descanso entre series",
+                    "instrucciones": "Acuéstate boca abajo en la máquina de curl femoral, con el borde del cojín justo debajo de las pantorrillas. Flexiona las rodillas llevando el cojín hacia los glúteos, y baja despacio a la posición inicial.",
+                    "carpeta": "Lying_Leg_Curls",
+                },
+            ],
+        },
+        {
+            "nombre": "Pantorrillas",
+            "ejercicios": [
+                {
+                    "nombre": "Elevación de talones sentada",
+                    "series": "3 series x 15 repeticiones",
+                    "descanso": "30 seg. de descanso entre series",
+                    "instrucciones": "Sentada en la máquina, con los muslos bajo el cojín y las puntas de los pies apoyadas en la plataforma. Levanta los talones lo más alto posible apretando la pantorrilla, y baja despacio hasta estirar bien.",
+                    "carpeta": "Seated_Calf_Raise",
+                },
+                {
+                    "nombre": "Elevación de talones de pie",
+                    "series": "3 series x 15 repeticiones",
+                    "descanso": "30 seg. de descanso entre series",
+                    "instrucciones": "De pie en la máquina, con los hombros bajo las almohadillas y las puntas de los pies en la plataforma. Sube los talones lo más alto posible, y baja despacio controlando el movimiento.",
+                    "carpeta": "Standing_Calf_Raises",
+                },
+            ],
+        },
+        {
+            "nombre": "Glúteos",
+            "ejercicios": [
+                {
+                    "nombre": "Patada de glúteo en el piso",
+                    "series": "2 series x 15 repeticiones por lado",
+                    "descanso": "30 seg. de descanso entre series",
+                    "instrucciones": "En el piso, apoyada en manos y rodillas (como en cuatro patas). Sin arquear la espalda, lleva una rodilla hacia atrás y arriba estirando la pierna, apretando el glúteo arriba. Baja controlando y repite antes de cambiar de lado.",
+                    "carpeta": "Glute_Kickback",
+                },
+                {
+                    "nombre": "Puente de glúteo a una pierna",
+                    "series": "2 series x 10 repeticiones por lado",
+                    "descanso": "30 seg. de descanso entre series",
+                    "instrucciones": "Acostada boca arriba con las rodillas flexionadas, levanta una pierna llevando la rodilla al pecho. Empuja con el talón de la otra pierna y levanta la cadera, apretando el glúteo. Baja despacio y repite antes de cambiar de lado.",
+                    "carpeta": "Single_Leg_Glute_Bridge",
+                },
+            ],
+        },
+    ],
+    "enfriamiento": {
+        "nombre": "Enfriamiento y estiramiento",
+        "duracion": "5 minutos",
+        "detalle": "Estira femorales, pantorrillas y glúteos al terminar, sosteniendo cada estiramiento unos 20 segundos.",
+    },
+    "notas": [
+        "Toma agua antes, durante y después de la rutina.",
+        "Si sientes dolor articular (no solo cansancio muscular), detente y avísale a tu entrenador/a.",
+        "En el peso muerto rumano, la espalda siempre recta: el movimiento sale de la cadera, no de la cintura.",
+        "Con esta sesión completaste el cuerpo entero en 4 días: la próxima semana puedes repetir el ciclo aumentando un poco el peso o las repeticiones.",
+    ],
+}
+
+DIAS = [DIA_1, DIA_2, DIA_3, DIA_4]
 
 PAGINAS_NAV = [
     {"slug": "index", "dia": "Día 1", "titulo": "Rutina Inicial de Piernas y Cardio"},
     {"slug": "dia2", "dia": "Día 2", "titulo": "Rutina de Espalda, Bíceps y Hombros"},
     {"slug": "dia3", "dia": "Día 3", "titulo": "Rutina de Pecho, Tríceps y Core"},
+    {"slug": "dia4", "dia": "Día 4", "titulo": "Rutina de Femoral, Pantorrillas y Glúteos"},
     {"slug": "progreso", "dia": "", "titulo": "Mi Progreso (fotos)"},
 ]
 
@@ -370,6 +453,12 @@ def dia2():
 @app.route("/dia3.html")
 def dia3():
     return render_dia(DIA_3)
+
+
+@app.route("/dia4")
+@app.route("/dia4.html")
+def dia4():
+    return render_dia(DIA_4)
 
 
 @app.route("/progreso")
